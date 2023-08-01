@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link id="favicon" rel="icon" type="image/x-icon" href="img/favicon_default.ico"> 
+    <link rel="stylesheet" href="style.css">
+    <title>England</title>
+</head>
+<body>  
+    <header>
+        <div class="logo">
+            <img id="logo" src="img/logo.png" alt="Логотип">
+            <span><h1><b>England - English Trainer</b></h1></span>
+        </div>
+    </header>
+    <main>
+        <div id="output"></div>
+        <input type="text" id="userInput" placeholder="Введите слово">
+        <div id="result"></div>
+        <table>
+            <tr>
+                <td>Верных ответов</td>
+                <td>Неверных ответов</td>
+                <td>Рекорд</td>
+            </tr>
+            <tr>
+                <td><span id="correctCount">0</span></td>
+                <td><span id="incorrectCount">0</span></td>
+                <td><span id="record">0</span></td>
+            </tr>
+        </table>
+        <button id="NullBtn" class = "fa fa-trash"></button>
+    
+        <div class="buttons-theme">
+            <button id="default-btn" class="button-default" style="background-color: rgb(40, 40, 40); color: rgb(215,153,33);" onclick="setTheme('default')">Default</button>
+            <button id="dark-btn" class="button-dark" style="background-color: rgb(17, 17, 17); color: rgb(238,238,238);" onclick="setTheme('dark')">Dark</button>
+            <button id="purple-btn" class="button-purple" style="background-color: rgb(20,18,33); color: rgb(253,119,215);" onclick="setTheme('purple')">Purple</button>
+        </div>
+
+    </main>
+    <footer>
+        <p>vovgoo | Copyright © 2023</p>
+    </footer>
+
+    <div class="modal" id="popupModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img src="img/9c612cacfae7618be190f5ce9a665d38-removebg-preview.png" alt="Image">
+            <h2>А ты хорош..</h2>
+            <p>Ты поставил новый рекорд.<br>Продолжай в том же духе.</p>
+        </div>
+    </div>
+
+</body>
+    <script src="script.js"></script>
+</html>

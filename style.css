@@ -1,0 +1,265 @@
+/* themes */
+
+:root {
+  --bg-color: rgb(40, 40, 40);
+  --output-color: rgb(215,153,33);
+  --userinput-color: rgb(196, 183, 150);
+  --userinput-border-color: rgb(44, 43, 43);
+  --nullbtn-color: rgb(87, 86, 86);
+  --logo-site: "img/logo.png"
+}
+
+:root.theme-dark {
+  --bg-color: rgb(17, 17, 17);
+  --output-color: rgb(238,238,238);
+  --userinput-color: rgb(238,238,238);
+  --userinput-border-color: rgb(20, 20, 20);
+  --nullbtn-color: rgb(68, 68, 68);
+}
+
+:root.theme-purple {
+  --bg-color: rgb(20,18,33);
+  --output-color: rgb(253,119,215);
+  --userinput-color: rgb(255, 198, 239);
+  --userinput-border-color: rgb(23, 21, 36);
+  --nullbtn-color: rgb(68, 68, 68);
+}
+
+/* styles.css */
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: var(--bg-color); 
+  color: var(--userinput-color);
+}
+ 
+main {
+  backdrop-filter: blur(10px); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: var(--bg-color);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  font-size: 0.5vw;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px; 
+  width: auto; 
+  transform: rotate(270deg); 
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--userinput-color);
+  padding: 20px 0;
+  text-align: center;
+}
+
+main.blur-effect {
+  filter: blur(5px);
+}
+
+header.blur-effect {
+  filter: blur(5px);
+}
+
+footer.blur-effect {
+  filter: blur(5px);
+}
+
+#correctCount, #incorrectCount {
+  font-weight: bold;
+}
+
+#output{
+  margin-top: 30px;
+  color: var(--output-color);
+  font-weight: bold;
+  font-size: 2em;
+}
+
+#userInput {
+  margin-top: 10px;
+  padding: 5px;
+  padding: 10px 10px;
+  font-size: 1.5em;
+  width: 200px;
+  font-family: 'Roboto Mono', monospace;
+  background-color: var(--bg-color);
+  color: var(--userinput-color);
+  border: 3px solid var(--userinput-border-color);
+  border-radius: 8px;
+  outline: none;
+  width: 500px;
+  text-align: center;
+  transition: border-color 0.5s easy; 
+}
+::placeholder {
+  font-family: 'Roboto Mono', monospace;
+}
+
+#userInput:hover {
+  border-color: var(--userinput-color); 
+}
+
+#userInput:focus {
+  border-color: var(--userinput-color); 
+}
+
+#NullBtn {
+  height: 50px;
+  width: 100px;
+  font-size: 24px; 
+  color: var(--nullbtn-color);
+  background-color: transparent; 
+  border: none; 
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease; 
+  border-radius: 5px;
+}
+
+#NullBtn:hover {
+  color: var(--userinput-color);
+}
+
+#NullBtn:active {
+  color: var(--bg-color);
+  background-color: var(--userinput-color);
+}
+
+#result{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  height: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.result-text.hidden {
+  opacity: 0;
+}
+
+table {
+  width: 100%; 
+  border-collapse: collapse;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  table-layout: fixed;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center; 
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg-color);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.05);
+  z-index: 2;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-content img{
+  width: 200px;
+}
+
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buttons-theme{
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+}
+
+.button-default,
+.button-dark, 
+.button-purple{
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  width: 150px;
+  height: 35px;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px; 
+}
+
+.button-default:hover, 
+.button-dark:hover, 
+.button-purple:hover{
+  transform: scale(1.2);
+}
+
+.button-border{
+  border: 3px solid var(--output-color);
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    display: flex;
+    font-size: 2vw;
+    align-items: center;
+    flex-grow: 1; 
+    justify-content: center;
+  } 
+
+  .logo img {
+    height: 30px; 
+    width: auto; 
+    transform: rotate(270deg); 
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  #output{
+    font-size: 1.5em;
+  }
+  
+  #userInput{
+    width: 80%;
+  }
+}
+
+
