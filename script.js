@@ -8,21 +8,21 @@ let theme = localStorage.getItem('theme');
 // Проверка и сохранения темы
 
 if (theme !== null) {
-  console.log("pensil")
   switch (theme){
     case '0':
-      setTheme("default")
+      setTheme("default");
       break;
     case '1':
-      setTheme("dark")
+      setTheme("dark");
       break;
     case '2':
-      setTheme("purple")
+      setTheme("purple");
       break;
   }
 } else {
   theme = 0;
   localStorage.setItem('theme', theme);
+  setTheme("default");
 }
 
 // Проверка и сохранения рекорда
