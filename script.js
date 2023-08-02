@@ -64,7 +64,8 @@ fetch("output_file.txt")
       currentEnglishWord = randomWord.slice(0, firstSpaceIndex);
       currentRussianWord = randomWord.slice(firstSpaceIndex + 1);
       const outputDiv = document.getElementById("output");
-      outputDiv.innerHTML = `<p><strong>${currentEnglishWord} - ${currentRussianWord}</strong></p>`;
+      //outputDiv.innerHTML = `<p><strong>${currentEnglishWord} - ${currentRussianWord}</strong></p>`;
+      outputDiv.innerHTML = `<p><strong>${currentRussianWord}</strong></p>`;
     }
   })
   .catch(error => console.error("Error reading the file:", error));
